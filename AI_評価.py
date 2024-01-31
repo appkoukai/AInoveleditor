@@ -4,7 +4,6 @@ import openai
 # OpenAI APIキーを設定
 openai.api_key = st.secrets["API_key"]
 
-
 # Streamlit設定
 st.title('文章評価アプリ') 
 
@@ -28,7 +27,7 @@ if st.button('評価実行'):
             messages.append({"role":"assistant", "content":"..."})
 
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-3.5-turbo-1106",
                 messages=messages
             )
             
