@@ -10,8 +10,14 @@ st.title('文章評価アプリ')
 # ユーザー入力
 user_input = st.text_area('文章を入力')
 
-# 評価項目の定義と選択
-evaluation_items = ['構成', '表現', '説得力']
+#評価機構
+# 評価項目の初期値
+default_items = ['テーマの出力', '描写の不足', '新規性', '改善の提案'] 
+# ユーザー入力欄を設ける
+evaluation_items = st.text_input('評価項目(カンマ区切りで入力)', ', '.join(default_items))
+# 入力値からリストに変換
+evaluation_items = evaluation_items.split(',') 
+# チェックボックス表示
 checked_items = [item for item in evaluation_items if st.checkbox(item)]
 
 # ボタンクリック時に実行
