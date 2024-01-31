@@ -3,7 +3,7 @@ import openai
 import os
 
 # OpenAI APIキーを設定
-openai.api_key = "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" 
+openai.api_key = st.secrets["API_key"]
 
 
 # Streamlit設定
